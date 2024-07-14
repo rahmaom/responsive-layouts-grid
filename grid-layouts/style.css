@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&display=swap");
+
+:root {
+  --bg--black-900: #f2f2fc;
+  --bg--black-100: #fdf9ff;
+  --bg--black-50: #e8dfec;
+  --text--black-900: #302e4d;
+  --text--black-700: #504e70;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: rgb(15, 46, 46);
+}
+
+.container {
+  padding: 1px;
+  width: 100vw;
+  height: 100vh;
+  color: #e8dfec;
+  display: grid;
+  grid-template-areas:
+    "aside nav nav"
+    "aside main main"
+    "aside section section"
+    "aside footer footer";
+  grid-gap: 0.6rem;
+  text-align: center;
+  font-size: 5rem;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  grid-template-rows: 0.8fr 2.5fr 1.5fr 0.8fr;
+}
+span {
+  font-family: "Clicker Script", sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+aside {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+nav,
+main,
+aside,
+section,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  background-color: cadetblue;
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  background-color: lightblue;
+  grid-area: main;
+}
+aside {
+  background-color: lightseagreen;
+  grid-area: aside;
+}
+section {
+  background-color: rgb(145, 193, 210);
+  grid-area: section section;
+}
+footer {
+  background-color: darkseagreen;
+  grid-area: footer;
+}
+
+@media (max-width: 639px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 1.2fr 0.5fr 0.5fr 0.3fr;
+    grid-template-areas:
+      "nav"
+      "main"
+      "section"
+      "section"
+      "footer";
+    font-size: 3rem;
+  }
+  aside {
+    display: none;
+  }
+}
+@media ((min-width: 640px) and (max-width: 1124px)) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.3fr 2fr 1.2fr 0.3fr;
+    grid-template-areas:
+      "aside nav"
+      "main main"
+      "section section "
+      "footer footer";
+    font-size: 3rem;
+  }
+  aside {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+}
